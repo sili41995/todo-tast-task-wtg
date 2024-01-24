@@ -56,3 +56,8 @@ export interface IGetPaginationBarSettings {
   currentPage: number;
   step: number;
 }
+
+export interface IEvent {
+  title: string;
+  date: Date;
+}

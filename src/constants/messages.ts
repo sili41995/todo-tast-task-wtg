@@ -1,5 +1,6 @@
 const enum Messages {
   emptyList = 'Todos list is empty',
+  emptyEventsList = 'Events list is empty',
   loadedSuccess = 'Todos loaded successfully',
   fetchTodoByIdError = 'Fetch todo failed',
   fetchTodosError = 'Fetch todos failed',

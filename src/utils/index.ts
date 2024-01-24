@@ -8,3 +8,4 @@ export { default as makeBlur } from './makeBlur';
 export { default as getPaginationBarSettings } from './getPaginationBarSettings';
 export { default as setBtnDisplayProp } from './setBtnDisplayProp';
 export { default as getIsTodosPage } from './getIsTodosPage';
+export { default as getEvents } from './getEvents';

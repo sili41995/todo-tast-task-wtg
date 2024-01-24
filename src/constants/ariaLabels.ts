@@ -6,6 +6,7 @@ const enum AriaLabels {
   previousPage = 'Go to previous page',
   firstPage = 'Go to first page',
   lastPage = 'Go to last page',
+  closeBtn = 'Close',
 }
 
 export default AriaLabels;

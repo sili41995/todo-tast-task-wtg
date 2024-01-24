@@ -30,6 +30,7 @@ const theme: ITheme = {
     greenIconColor: '#00c938',
     lightgreyIconColor: '#555555',
     borderColor: 'rgba(137, 137, 137, 0.43)',
+    backdropColor: 'rgba(18, 20, 23, 0.50)',
   },
   shadows: {
     primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
