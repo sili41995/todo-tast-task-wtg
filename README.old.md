@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Preparing for coding
 
 1. Make sure you have an LTS version of Node.js installed on your computer. Run the command `node -v` in the terminal. If the terminal displays the version (for example, v20.10.0), then Node.js is installed on your PC. [Download and install](https://nodejs.org/en/) if needed.
