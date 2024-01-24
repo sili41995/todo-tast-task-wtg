@@ -8,6 +8,7 @@ import DefaultMessage from 'components/DefaultMessage';
 import { Messages } from 'constants/index';
 import { EventClickArg } from '@fullcalendar/core';
 import ModalWin from 'components/ModalWin';
+import Event from 'components/Event';
 
 const EventPlanningPage: FC = () => {
   const [showModalWin, setShowModalWin] = useState<boolean>(false);
@@ -34,7 +35,7 @@ const EventPlanningPage: FC = () => {
       />
       {showModalWin && (
         <ModalWin setModalWinState={toggleShowModal}>
-          <p>{event}</p>
+          <Event event={event as string} />
         </ModalWin>
       )}
     </>
