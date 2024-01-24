@@ -1,7 +1,6 @@
-import { Messages } from 'constants/index';
-import PagePaths from 'constants/pagePaths';
 import { FC, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
+import { Messages, PagePaths } from 'constants/index';
 import { toasts } from 'utils';
 
 const NotFoundPage: FC = () => {

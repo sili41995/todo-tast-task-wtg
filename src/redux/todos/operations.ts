@@ -62,3 +62,17 @@ export const updateTodo = createAsyncThunk<
     }
   }
 );
+
+export const addTodo = createAsyncThunk<ITodo, ITodo, { rejectValue: string }>(
+  'todos/addTodo',
+  async (data, { rejectWithValue }: { rejectWithValue: Function }) => {
+    try {
+      const response = await todosServiceApi.addTodo(data);
+      return response;
+    } catch (error) {
+      if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      }
+    }
+  }
+);

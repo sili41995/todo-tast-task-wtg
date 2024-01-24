@@ -1,7 +1,7 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import initialState from '../initialState';
 import { ITodosState } from 'types/types';
-import { deleteTodo, fetchTodos } from './operations';
+import { addTodo, deleteTodo, fetchTodos, updateTodo } from './operations';
 
 const todosSlice = createSlice({
   name: 'todos',
@@ -20,15 +20,44 @@ const todosSlice = createSlice({
         isLoading: false,
         items: state.items && state.items.filter(({ id }) => id !== payload.id),
       }))
-      .addMatcher(isAnyOf(fetchTodos.pending), (state) => ({
-        ...state,
-        isLoading: true,
-      }))
-      .addMatcher(isAnyOf(fetchTodos.rejected), (state, { payload }) => ({
+      .addCase(updateTodo.fulfilled, (state, { payload }) => ({
         ...state,
         isLoading: false,
-        error: payload as string,
-      }));
+        items: state.items && [
+          ...state.items.filter(({ id }) => id !== payload.id),
+          payload,
+        ],
+      }))
+      .addCase(addTodo.fulfilled, (state, { payload }) => ({
+        ...state,
+        isLoading: false,
+        items: state.items && [...state.items, payload],
+      }))
+      .addMatcher(
+        isAnyOf(
+          fetchTodos.pending,
+          deleteTodo.pending,
+          updateTodo.pending,
+          addTodo.pending
+        ),
+        (state) => ({
+          ...state,
+          isLoading: true,
+        })
+      )
+      .addMatcher(
+        isAnyOf(
+          fetchTodos.rejected,
+          deleteTodo.rejected,
+          updateTodo.rejected,
+          addTodo.rejected
+        ),
+        (state, { payload }) => ({
+          ...state,
+          isLoading: false,
+          error: payload as string,
+        })
+      );
   },
 });
 

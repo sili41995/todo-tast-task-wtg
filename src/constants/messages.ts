@@ -5,9 +5,13 @@ const enum Messages {
   fetchTodosError = 'Fetch todos failed',
   notFound = 'The request URL was not found',
   deleteTodoError = 'Delete todo failed',
+  addTodoError = 'Added todo failed',
   updateTodoError = 'Update todo failed',
   deleteTodoSuccessfully = 'Todo successfully removed',
   updateTodoSuccessfully = 'Todo updated successfully',
+  addTodoSuccessfully = 'Todo added successfully',
+  taskIsReq = 'Task is required',
+  todoIdError = 'Todo is absent',
 }
 
 export default Messages;

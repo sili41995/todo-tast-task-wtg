@@ -1,7 +1,7 @@
+import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
 import { interMedium, interSemiBold, juaRegular } from 'fonts';
-import { FC } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalStyles: FC = () => (

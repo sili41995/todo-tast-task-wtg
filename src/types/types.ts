@@ -1,3 +1,5 @@
+import { SetURLSearchParams } from 'react-router-dom';
+
 export interface ITodo {
   id: string;
   task: string;
@@ -15,14 +17,14 @@ export interface IState {
   todos: ITodosState;
 }
 
-export interface IUpdateTodoProps {
-  data: ITodo;
-  id: string;
-}
-
 export interface IFetchTodoProps {
   id: string;
   signal: AbortSignal;
+}
+
+export interface IUpdateTodoProps {
+  data: ITodo;
+  id: string;
 }
 
 export interface INavLink {
@@ -31,3 +33,26 @@ export interface INavLink {
 }
 
 export type NavLinks = Readonly<INavLink[]>;
+
+export interface IUpdateSearchParamsProps {
+  key: string;
+  value: string;
+}
+
+export interface IUseSetSearchParams {
+  updateSearchParams: ({ key, value }: IUpdateSearchParamsProps) => void;
+  searchParams: URLSearchParams;
+  setSearchParams: SetURLSearchParams;
+}
+
+export interface IGetVisibleTodosProps {
+  todos: ITodo[] | null;
+  quantity: number;
+  currentPage: number;
+}
+
+export interface IGetPaginationBarSettings {
+  pageNumbers: number[];
+  currentPage: number;
+  step: number;
+}

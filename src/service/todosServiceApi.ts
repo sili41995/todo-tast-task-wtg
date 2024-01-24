@@ -74,6 +74,24 @@ class TodosServiceApi {
       return response.json();
     });
   }
+
+  addTodo(data: ITodo): Promise<ITodo> {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    };
+
+    return fetch(`${this.BASE_URL}`, options).then((response) => {
+      if (!response.ok) {
+        throw Error(Messages.addTodoError);
+      }
+
+      return response.json();
+    });
+  }
 }
 
 const todosServiceApi = new TodosServiceApi();
